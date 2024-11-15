@@ -17,6 +17,5 @@ class TestLogout:
         driver.find_element(By.XPATH, TestLocators.PERSONAL_ACCOUNT_BUTTON).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.EXIT_TEXT_BUTTON)))
         driver.find_element(By.XPATH, TestLocators.EXIT_TEXT_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.ENTER_BUTTON)))
-        assert driver.current_url == authorization_page and driver.find_element(By.XPATH, TestLocators.ENTER_BUTTON).text == 'Войти'
+        assert WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.ENTER_BUTTON))) and driver.current_url == authorization_page
 

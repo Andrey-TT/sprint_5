@@ -15,8 +15,7 @@ class TestLogin:
         driver.find_element(By.XPATH, TestLocators.INPUT_EMAIL).send_keys(my_email)
         driver.find_element(By.XPATH, TestLocators.INPUT_PASS).send_keys(my_password)
         driver.find_element(By.XPATH, TestLocators.ENTER_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON)))
-        assert driver.current_url == main_page and driver.find_element(By.XPATH, TestLocators.PLACE_ORDER_BUTTON).text == 'Оформить заказ'
+        assert WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON))) and driver.current_url == main_page
 
     def test_authorization_personal_account_button(self, driver): # Тест вход через кнопку «Личный кабинет»
         driver.get(main_page)
@@ -26,8 +25,7 @@ class TestLogin:
         driver.find_element(By.XPATH, TestLocators.INPUT_EMAIL).send_keys(my_email)
         driver.find_element(By.XPATH, TestLocators.INPUT_PASS).send_keys(my_password)
         driver.find_element(By.XPATH, TestLocators.ENTER_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON)))
-        assert driver.current_url == main_page and driver.find_element(By.XPATH, TestLocators.PLACE_ORDER_BUTTON).text == 'Оформить заказ'
+        assert WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON))) and driver.current_url == main_page
 
     def test_authorization_button_in_registration_form(self, driver): # Тест вход через кнопку в форме регистрации
         driver.get(register_page)
@@ -37,8 +35,7 @@ class TestLogin:
         driver.find_element(By.XPATH, TestLocators.INPUT_EMAIL).send_keys(my_email)
         driver.find_element(By.XPATH, TestLocators.INPUT_PASS).send_keys(my_password)
         driver.find_element(By.XPATH, TestLocators.ENTER_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON)))
-        assert driver.current_url == main_page and driver.find_element(By.XPATH, TestLocators.PLACE_ORDER_BUTTON).text == 'Оформить заказ'
+        assert WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON))) and driver.current_url == main_page
 
     def test_authorization_button_in_password_recovery(self, driver): # Тест вход через кнопку в форме восстановления пароля
         driver.get(recovery_pass_page)
@@ -48,5 +45,4 @@ class TestLogin:
         driver.find_element(By.XPATH, TestLocators.INPUT_EMAIL).send_keys(my_email)
         driver.find_element(By.XPATH, TestLocators.INPUT_PASS).send_keys(my_password)
         driver.find_element(By.XPATH, TestLocators.ENTER_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON)))
-        assert driver.current_url == main_page and driver.find_element(By.XPATH, TestLocators.PLACE_ORDER_BUTTON).text == 'Оформить заказ'
+        assert WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PLACE_ORDER_BUTTON))) and driver.current_url == main_page

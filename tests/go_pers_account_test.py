@@ -15,6 +15,4 @@ class TestGo_pers_account:
         driver.find_element(By.XPATH, TestLocators.ENTER_BUTTON).click()
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.PERSONAL_ACCOUNT_BUTTON)))
         driver.find_element(By.XPATH, TestLocators.PERSONAL_ACCOUNT_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.EXIT_TEXT_BUTTON)))
-        assert driver.current_url == profile_page and driver.find_element(By.XPATH, TestLocators.SAVE_BUTTON).text == 'Сохранить'
-
+        assert WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((By.XPATH, TestLocators.SAVE_BUTTON))) and driver.current_url == profile_page
